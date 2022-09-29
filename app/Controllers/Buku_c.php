@@ -11,10 +11,12 @@ class Buku_c extends ResourceController
 
     public function view()
     {
-        $respond = [
-            'status' => 'sukses',
-            'semua' => $this->model->view()
+
+        $data = [
+            'id' => $this->request->getVar('id'),
         ];
+
+        $respond = $this->model->view($data);
         return $this->respond($respond);
     }
 }

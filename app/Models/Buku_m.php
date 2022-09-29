@@ -9,9 +9,13 @@ class Buku_m extends Model
     protected $table = 'buku';
 
 
-    public function view()
+    public function view($data)
     {
-        // return $this->findAll();
-        return $this->select()->findAll();
+        $array = ['id_buku' => $data['id']];
+        if($data['id']) {
+            return $this->where($array)->findAll();
+        } else {
+            return $this->findAll();
+        }
     }
 }
