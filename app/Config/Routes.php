@@ -38,7 +38,6 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/buku', 'Home::buku');
 $routes->get('/api/buku/view', 'Buku_c::view');
-$routes->get('/api/buku/view_id', 'Buku_c::view_id');
 
 /*
  * --------------------------------------------------------------------
