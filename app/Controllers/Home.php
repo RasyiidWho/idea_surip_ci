@@ -11,6 +11,9 @@ class Home extends BaseController
 
     public function buku()
     {
-        return view('omah/buku');
+        $data = [
+			'id' => $this->request->getVar('id'),
+		];
+        return view('omah/buku', $data);
     }
 }
