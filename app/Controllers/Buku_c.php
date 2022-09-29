@@ -14,6 +14,7 @@ class Buku_c extends ResourceController
 
         $data = [
             'id' => $this->request->getVar('id'),
+            'rekomendasi' => $this->request->getVar('id'),
         ];
 
         $respond = $this->model->view($data);
