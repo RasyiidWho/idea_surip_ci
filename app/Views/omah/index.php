@@ -145,7 +145,7 @@
       </div>
       <div class="col-md-2">
         <h6>Rekomendasi</h6>
-        <div id="rekomendasi">
+        <div id="buku_rekomendasi">
 
         </div>
       </div>
@@ -178,8 +178,8 @@
 </html>
 
 <script>
-
   buku_terbaru();
+
   function buku_terbaru() {
     $.ajax({
       url: "<?= base_url('api/buku/view') ?>",
@@ -202,28 +202,36 @@
             '</div>' +
             '</div>'
           );
-          console.log(data[x]['id_buku']);
         }
       },
     });
   }
 
 
-  // function buku_rekomendasi() {
-  //   $.ajax({
-  //     url: "<?= base_url('api/buku/view') ?>",
-  //     method: "GET",
-  //     data: {
-  //       type: 'all',
-  //     },
-  //     dataType: "json",
-  //     async: true,
-  //     success: function(data) {
-  //       $("#status_selesai").html(data[0][0]['status_selesai']);
-  //       $("#status_pending").html(data[0][0]['status_pending']);
-  //       $("#status_proses").html(data[0][0]['status_proses']);
-  //       $("#status_gagal").html(data[0][0]['status_gagal']);
-  //     },
-  //   });
-  // }
+  buku_rekomendasi();
+
+  function buku_rekomendasi() {
+    $.ajax({
+      url: "<?= base_url('api/buku/view') ?>",
+      method: "GET",
+      data: {
+        rekomendasi: "nggih",
+      },
+      dataType: "json",
+      async: true,
+      success: function(data) {
+        for (var x in data) {
+          $("#buku_rekomendasi").append(
+            '<div class="card mt-1 ml-1" style="width: 9rem;">' +
+            '<a href=""><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
+            '<div class="card-body text-center">' +
+            '<p class="card-title font-weight-bold" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 13px">' + data[x]['judul'] + '</p>' +
+            '</div>' +
+            '</div>'
+          );
+          console.log(data[x]['id_buku']);
+        }
+      },
+    });
+  }
 </script>

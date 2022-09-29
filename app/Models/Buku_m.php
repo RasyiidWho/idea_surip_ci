@@ -15,7 +15,7 @@ class Buku_m extends Model
         if($data['id']) {
             return $this->where($array)->findAll();
         } else if($data['rekomendasi']) {
-            return $this->findAll();
+            return $this->where('id_buku >', '10')->findAll();
         } else {
             return $this->findAll();
         }

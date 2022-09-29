@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('omah/index');
     }
+
+    public function buku()
+    {
+        return view('omah/buku');
+    }
 }
