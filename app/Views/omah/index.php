@@ -229,7 +229,6 @@
             '</div>' +
             '</div>'
           );
-          console.log(data[x]['id_buku']);
         }
       },
     });
