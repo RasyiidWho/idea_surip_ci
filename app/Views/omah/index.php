@@ -24,7 +24,7 @@
   <!-- Image and text -->
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #00478F;">
-      <a class="navbar-brand" href="index.php">
+      <a class="navbar-brand" href="<?= base_url() ?>">
         <img src="assets/img/logo.png" width="70" height="30" alt="">
       </a>
       <!-- <a class="navbar-brand" href="#">Idea Sejahtera</a> -->
@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
             <a class="nav-link" href="tentang_kami.php">Tentang Kami</a>
@@ -192,7 +192,7 @@
           $("#buku_terbaru").append(
             '<div class="col-md-3 mt-2 pb-2" style="margin-left: -3px;">' +
             '<div class="card" style="width: 11rem; height: 350px;">' +
-            '<a href=""><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
+            '<a href="<?= base_url('/buku') ?>?id=' + data[x]['buku_id'] + '"><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
             '<div class="card-body text-center">' +
             '<p class="card-title font-weight-bold" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;">' + data[x]['judul'] + '</p>' +
             '<p style="font-size: 13px ; margin-top: -10px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden;">' + data[x]['penulis'] + '</p>' +

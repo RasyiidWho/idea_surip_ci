@@ -25,7 +25,7 @@
     <!-- Image and text -->
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #00478F;">
-            <a class="navbar-brand" href="index.php">
+            <a class="navbar-brand" href="<?= base_url() ?>">
                 <img src="assets/img/logo.png" width="70" height="30" alt="">
             </a>
             <!-- <a class="navbar-brand" href="#">Idea Sejahtera</a> -->
@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?= base_url() ?>">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Tentang Kami</a>
