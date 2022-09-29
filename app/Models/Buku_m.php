@@ -20,4 +20,9 @@ class Buku_m extends Model
             return $this->findAll();
         }
     }
+
+    public function view_judul($data)
+    {
+        return $this->like('judul', $data['judul'])->findAll();
+    }
 }

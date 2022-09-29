@@ -192,7 +192,7 @@
           $("#buku_terbaru").append(
             '<div class="col-md-3 mt-2 pb-2" style="margin-left: -3px;">' +
             '<div class="card" style="width: 11rem; height: 350px;">' +
-            '<a href="<?= base_url('/buku') ?>?id=' + data[x]['id_buku'] + '"><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
+            '<a href="<?= base_url('/buku') ?>/' + data[x]['judul'].replaceAll(' ', '-').toLowerCase() + '"><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
             '<div class="card-body text-center">' +
             '<p class="card-title font-weight-bold" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;">' + data[x]['judul'] + '</p>' +
             '<p style="font-size: 13px ; margin-top: -10px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; overflow: hidden;">' + data[x]['penulis'] + '</p>' +

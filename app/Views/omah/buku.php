@@ -234,7 +234,8 @@
             url: "<?= base_url('api/buku/view') ?>",
             method: "GET",
             data: {
-                id: <?php echo $id ?>
+                id: <?php echo $id ?>,
+                judul:  new URL(window.location.href).pathname.split('/').filter(Boolean).pop(),
             },
             dataType: "json",
             async: true,
@@ -250,6 +251,8 @@
                 $('#harga').html(data[0]['harga']);
             },
         });
+
+        console.log(new URL(window.location.href).pathname.split('/').filter(Boolean).pop());
     }
 
     buku_rekomendasi();
@@ -273,7 +276,6 @@
                         '</div>' +
                         '</div>'
                     );
-                    console.log(data[x]['id_buku']);
                 }
             },
         });

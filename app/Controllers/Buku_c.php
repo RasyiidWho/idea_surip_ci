@@ -20,4 +20,15 @@ class Buku_c extends ResourceController
         $respond = $this->model->view($data);
         return $this->respond($respond);
     }
+
+    public function view_judul($judul)
+    {
+
+        $data = [
+            'judul' =>  str_replace("-"," ",$judul),
+        ];
+
+        $respond = $this->model->view_judul($data);
+        return $this->respond($respond);
+    }
 }

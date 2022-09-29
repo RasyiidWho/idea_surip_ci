@@ -37,6 +37,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/buku', 'Home::buku');
+$routes->get('/buku/(:any)', 'Home::buku$1');
+$routes->get('/buku/(:any)', 'Home::buku/$1');
+$routes->get('/api/buku/view_judul/(:any)', 'Buku_c::view_judul/$1');
 $routes->get('/api/buku/view', 'Buku_c::view');
 
 /*
