@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => 'rasyiid123',
-        'database' => 'idea',
+        'database' => 'idea_surip',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
