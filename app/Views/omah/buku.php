@@ -17,7 +17,7 @@
 
     <!-- Header -->
     <div class="container">
-        <img src="assets/img/Header.jpg" alt="" style="width : 100% ;">
+        <img src="<?= base_url() ?>/assets/img/Header.jpg" alt="" style="width : 100% ;">
     </div>
     <!-- End header -->
 
@@ -26,7 +26,7 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #00478F;">
             <a class="navbar-brand" href="<?= base_url() ?>">
-                <img src="assets/img/logo.png" width="70" height="30" alt="">
+                <img src="<?= base_url() ?>/assets/img/logo.png" width="70" height="30" alt="">
             </a>
             <!-- <a class="navbar-brand" href="#">Idea Sejahtera</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -108,9 +108,9 @@
                             <div class="card-body">
                                 <h6 class="card-title">Temukan Kami</h6>
                                 <hr>
-                                <a href=""><img src="assets/img/tokopedia.jpg" class="mt-2" width="120px;" alt="Link tokopedia"></a>
-                                <a href=""><img src="assets/img/shopee.jpg" class="mt-2" width="120px;" alt="Link shopee"></a>
-                                <a href=""><img src="assets/img/bukalapak.jpg" class="mt-2" width="120px;" alt="Link bukalapak"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/tokopedia.jpg" class="mt-2" width="120px;" alt="Link tokopedia"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/shopee.jpg" class="mt-2" width="120px;" alt="Link shopee"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/bukalapak.jpg" class="mt-2" width="120px;" alt="Link bukalapak"></a>
                             </div>
                         </div>
                     </div>
@@ -119,9 +119,9 @@
                             <div class="card-body">
                                 <h6 class="card-title">Pembayaran</h6>
                                 <hr>
-                                <a href=""><img src="assets/img/bca.png" class="mt-2" width="120px;" alt="Link BCA"></a>
-                                <a href=""><img src="assets/img/bri.png" class="mt-5" width="120px;" alt="Link BRI"></a>
-                                <a href=""><img src="assets/img/mandiri.png" class="mt-5 mb-2" width="120px;" alt="Link Mandiri"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/bca.png" class="mt-2" width="120px;" alt="Link BCA"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/bri.png" class="mt-5" width="120px;" alt="Link BRI"></a>
+                                <a href=""><img src="<?= base_url() ?>/assets/img/mandiri.png" class="mt-5 mb-2" width="120px;" alt="Link Mandiri"></a>
                             </div>
                         </div>
                     </div>
@@ -231,11 +231,9 @@
 
     function buku() {
         $.ajax({
-            url: "<?= base_url('api/buku/view') ?>",
+            url: "<?= base_url('api/buku/view_judul') ?>" + "/" + new URL(window.location.href).pathname.split('/').filter(Boolean).pop(),
             method: "GET",
             data: {
-                id: <?php echo $id ?>,
-                judul:  new URL(window.location.href).pathname.split('/').filter(Boolean).pop(),
             },
             dataType: "json",
             async: true,
@@ -270,7 +268,7 @@
                 for (var x in data) {
                     $("#buku_rekomendasi").append(
                         '<div class="card mt-1 ml-1" style="width: 9rem;">' +
-                        '<a href=""><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
+                        '<a href="<?= base_url('/buku') ?>/' + data[x]['judul'].replaceAll(' ', '-').toLowerCase() + '"><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
                         '<div class="card-body text-center">' +
                         '<p class="card-title font-weight-bold" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 13px">' + data[x]['judul'] + '</p>' +
                         '</div>' +

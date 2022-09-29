@@ -9,11 +9,16 @@ class Home extends BaseController
         return view('omah/index');
     }
 
-    public function buku()
+    public function bukux()
     {
         $data = [
 			'id' => $this->request->getVar('id'),
 		];
-        return view('omah/buku', $data);
+        return view('omah/bukux', $data);
+    }
+
+    public function buku()
+    {
+        return view('omah/buku');
     }
 }

@@ -223,7 +223,7 @@
         for (var x in data) {
           $("#buku_rekomendasi").append(
             '<div class="card mt-1 ml-1" style="width: 9rem;">' +
-            '<a href=""><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
+            '<a href="<?= base_url('/buku') ?>/' + data[x]['judul'].replaceAll(' ', '-').toLowerCase() + '"><img class="card-img-top w-100 p-1 text-center" src="<?= base_url('assets/img') ?>/' + data[x]['cover'] + '" alt="Card image cap" style="height: 200px;"></a>' +
             '<div class="card-body text-center">' +
             '<p class="card-title font-weight-bold" style="display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; font-size: 13px">' + data[x]['judul'] + '</p>' +
             '</div>' +
